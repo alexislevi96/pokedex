@@ -1,38 +1,128 @@
-.App {
-  text-align: center;
+.pokedex {
+  /* position: relative; */
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  grid-gap: 18px;
+  padding: 0px 10px 20px 10px;
 }
-
-.App-logo {
-  height: 40vmin;
-  pointer-events: none;
-}
-
-@media (prefers-reduced-motion: no-preference) {
-  .App-logo {
-    animation: App-logo-spin infinite 20s linear;
+@media screen and (max-width: 992px) {
+  .pokedex {
+    grid-template-columns: repeat(2, 1fr);
   }
 }
 
-.App-header {
-  background-color: #282c34;
-  min-height: 100vh;
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  justify-content: center;
-  font-size: calc(10px + 2vmin);
+@media screen and (max-width: 600px) {
+  .pokedex {
+    grid-template-columns: repeat(1, 1fr);
+  }
+}
+.container {
+  margin-top: 30px;
+  margin-left: 40px;
+  margin-right: 40px;
+}
+.Logo {
+  position: relative;
+  text-align: center;
+  margin-bottom: 30px;
+}
+.pokemon-card {
+  padding: 10px;
+  border-radius: 10px;
+  box-shadow: 4px 4px 4px rgb(172, 172, 172);
+}
+.pokemon-name {
   color: white;
+  margin-top: 0px;
+  padding-bottom: 0px;
+  margin-bottom: 0px;
 }
-
-.App-link {
-  color: #61dafb;
+.container-numero {
+  position: relative;
 }
-
-@keyframes App-logo-spin {
-  from {
+.numero {
+  position: absolute;
+  font-size: 25px;
+  left: 86%;
+  bottom: 0px;
+}
+.container-img {
+  position: relative;
+  /* height: 90px; */
+}
+.pokemon-img {
+  position: absolute;
+  margin-top: -25px;
+  top: -20px;
+  left: 40%;
+  height: 170px;
+  width: 170px;
+}
+.pokemon-item {
+  margin: 3px !important;
+}
+.pokemon-types {
+  display: flex;
+  align-items: stretch;
+  align-content: space-between;
+}
+.pokemon-types strong {
+  margin-right: 4px;
+}
+.pokemon-type {
+  margin-right: 4px;
+  text-transform: capitalize;
+}
+.pokemon-item strong {
+  color: rgb(224, 223, 223);
+}
+.iconArrow {
+  cursor: pointer;
+  margin: 4px;
+}
+.botones {
+  text-align: center;
+  margin-bottom: 40px;
+}
+/* Loading ////////////////////////// */
+.loader,
+.loader:after {
+  border-radius: 50%;
+  width: 10em;
+  height: 10em;
+}
+.loader {
+  margin: 60px auto;
+  font-size: 10px;
+  position: relative;
+  text-indent: -9999em;
+  border-top: 1.1em solid rgba(0, 0, 0, 0.2);
+  border-right: 1.1em solid rgba(0, 0, 0, 0.2);
+  border-bottom: 1.1em solid rgba(0, 0, 0, 0.2);
+  border-left: 1.1em solid #000000;
+  -webkit-transform: translateZ(0);
+  -ms-transform: translateZ(0);
+  transform: translateZ(0);
+  -webkit-animation: load8 1.1s infinite linear;
+  animation: load8 1.1s infinite linear;
+}
+@-webkit-keyframes load8 {
+  0% {
+    -webkit-transform: rotate(0deg);
     transform: rotate(0deg);
   }
-  to {
+  100% {
+    -webkit-transform: rotate(360deg);
+    transform: rotate(360deg);
+  }
+}
+@keyframes load8 {
+  0% {
+    -webkit-transform: rotate(0deg);
+    transform: rotate(0deg);
+  }
+  100% {
+    -webkit-transform: rotate(360deg);
     transform: rotate(360deg);
   }
 }
